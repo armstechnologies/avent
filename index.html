@@ -3,6 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google tag (gtag.js) -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', { analytics_storage: 'granted', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZWNTEQ6485"></script>
+<script>
+  gtag('js', new Date());
+  gtag('config', 'G-ZWNTEQ6485');
+</script>
+<script src="/analytics.js" defer></script>
 <title>Avent Technical Group | Fibre Optic, Cabling &amp; Security Systems in London, Ontario</title>
 <meta name="description" content="Avent Technical Group installs fibre-optic and structured cabling, video surveillance and access control for commercial, industrial and institutional facilities across Southwestern Ontario. Call 519.652.3702.">
 <link rel="canonical" href="https://www.aventtg.com/">
@@ -744,7 +756,8 @@ class Component extends DCLogic {
       { name: 'Fujikura', short: 'Fusion Splicing', url: 'https://www.fujikura.com', logo: '/assets/partner-fujikura.png' },
       { name: 'dormakaba', short: 'Access Hardware', url: 'https://www.dormakaba.com/us-en/offering/products/electronic-access-data', logo: '/assets/partner-dormakaba.png' },
       { name: 'Kantech', short: 'Access Control', url: 'https://www.kantech.com/', logo: '/assets/partner-kantech.png' },
-      { name: 'ARMS Technologies', short: 'Property Technology', url: 'https://armstechnologies.ai/', logo: '/assets/partner-arms.png' }
+      { name: 'ARMS Technologies', short: 'Property Technology', url: 'https://armstechnologies.ai/', logo: '/assets/partner-arms.png' },
+      { name: 'AvantGuard Surveillance', short: 'Surveillance', url: 'https://www.aventguard.ca/', logo: '/assets/partner-aventguard.png' }
     ].map(p => Object.assign({}, p, {
       hasLogo: !!p.logo,
       logoDisplay: p.logo ? 'flex' : 'none',
@@ -1139,10 +1152,10 @@ class Component extends DCLogic {
         fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(form) })
           .then(r => r.json())
           .then(d => {
-            if (d && d.success) this.setState({ sent: true, sending: false });
-            else this.setState({ sending: false, formError: true });
+            if (d && d.success) { this.setState({ sent: true, sending: false }); try { window.dispatchEvent(new CustomEvent('avent:lead', { detail: { interest: form.interest && form.interest.value, company: form.company && form.company.value !== '', phone: form.phone && form.phone.value !== '' } })); } catch (x) {} }
+            else { this.setState({ sending: false, formError: true }); try { window.dispatchEvent(new CustomEvent('avent:form_error')); } catch (x) {} }
           })
-          .catch(() => this.setState({ sending: false, formError: true }));
+          .catch(() => { this.setState({ sending: false, formError: true }); try { window.dispatchEvent(new CustomEvent('avent:form_error')); } catch (x) {} });
       },
       helpOptions: ['How can we help you?', 'Fibre-Optic Cabling', 'Structured Copper Cabling', 'Communication Rooms', 'Video Surveillance', 'Access Control', 'Service & Support', 'Something else'],
       contactPoints: [
