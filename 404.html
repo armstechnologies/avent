@@ -18,15 +18,16 @@
 <title>Page Not Found | Avent Technical Group</title>
 <meta name="robots" content="noindex, follow">
 <link rel="icon" href="/assets/avent-logo-mark.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="script" href="/vendor/react.production.min.js" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" crossorigin="anonymous">
+<link rel="preload" as="script" href="/vendor/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&amp;family=Barlow:wght@400;500;600;700&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <script src="/support.js"></script>
 </head>
 <body>
 <noscript><div style="padding:32px"><h1>Page not found</h1><p><a href="/">Return to the Avent Technical Group home page</a></p></div></noscript>
-<x-dc>
+<x-dc><template data-dc-body>
 <helmet>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
-<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
   html, body { margin: 0; padding: 0; }
   body { background: #071A38; -webkit-font-smoothing: antialiased; }
@@ -48,7 +49,7 @@
     </div>
     <div style="max-width: 1320px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 44px) 14px; display: flex; align-items: center; justify-content: space-between; gap: 24px">
       <a href="{{ urlHome }}" onClick="{{ goHome }}" style="display: flex; align-items: center; gap: 11px; flex-shrink: 0" style-hover="opacity: 0.88">
-        <img src="/assets/avent-logo-dark.png" alt="Avent Technical Group" style="display: block; width: clamp(190px, 26vw, 260px); height: auto" />
+        <img src="/assets/avent-logo-dark.webp" width="260" height="71" fetchpriority="high" alt="Avent Technical Group" style="display: block; width: clamp(190px, 26vw, 260px); height: auto" />
       </a>
 
       <nav style="display: {{ navDisplay }}; align-items: center; flex-wrap: nowrap; white-space: nowrap; gap: clamp(8px, 1.5vw, 26px)">
@@ -522,7 +523,7 @@
     <div style="max-width: 1320px; margin: 0 auto; padding: clamp(44px, 6vw, 72px) clamp(20px, 5vw, 56px) 34px; display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: clamp(28px, 4vw, 48px)">
       <div>
         <div style="display: flex; align-items: center; gap: 11px; margin-bottom: 22px">
-          <img src="/assets/avent-logo-dark.png" alt="Avent Technical Group" style="display: block; width: 230px; max-width: 100%; height: auto" />
+          <img src="/assets/avent-logo-dark.webp" width="230" height="63" loading="lazy" decoding="async" alt="Avent Technical Group" style="display: block; width: 230px; max-width: 100%; height: auto" />
         </div>
         <p style="font-size: 15.5px; line-height: 1.7; color: rgba(255, 255, 255, 0.72); margin: 0 0 22px">Building connections.<br />Powering possibilities.<br />Delivering confidence.</p>
         <a href="https://www.linkedin.com/company/avent-technical-group-ltd" target="_blank" rel="noopener" aria-label="LinkedIn" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 4px; color: #FFFFFF" style-hover="border-color: #F26522; color: #F26522">
@@ -567,7 +568,7 @@
     </div>
   </footer>
 </div>
-</x-dc>
+</template></x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;formAccessKey&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;d0ee5f44-d9dd-4a49-ae08-ac2d82d76ebb&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact form&quot;}}">
 class Component extends DCLogic {
   state = { page: 'home', menuOpen: false, w: 1280, filter: 'All Projects', faq: 0, sent: false, sending: false, formError: false };
@@ -673,7 +674,7 @@ class Component extends DCLogic {
         p2: 'Our technicians work with single-mode and multimode fibre, backbone cabling, and a variety of termination and connectivity formats. Every installation is completed to current industry standards and manufacturer specifications.',
         listLabel: 'Our fibre services include:',
         bullets: ['Single-mode and multimode fibre installation', 'Fibre backbone cabling', 'Fibre termination and splicing', 'Testing, certification, and troubleshooting', 'Communication-room and rack integration', 'Cable management and patch-panel installation', 'Maintenance, repairs, and system upgrades'],
-        img: '/assets/solution-fiber-optic.jpg', icon: 'M12 3v6M12 15v6M5 12h14'
+        img: '/assets/solution-fiber-optic.webp', icon: 'M12 3v6M12 15v6M5 12h14'
       },
       {
         key: 'copper', title: 'Structured Copper Cabling', tagline: 'Reliable Cabling for Voice, Data, and Security',
@@ -681,14 +682,14 @@ class Component extends DCLogic {
         p2: 'Whether you are outfitting a new property, expanding an existing network, or upgrading aging infrastructure, we provide clean, organized, and standards-compliant installations.',
         listLabel: 'Our copper cabling capabilities include:',
         bullets: ['Category 6 structured cabling', 'Copper backbone cabling', 'Coaxial cabling', 'Surveillance and security-system cabling', 'Access-control and door-hardware wiring', 'Audio, microphone, speaker, and PA-system wiring', 'Patch panels, equipment racks, and cable management', 'Moves, additions, and changes'],
-        img: '/assets/solution-copper.jpg', icon: 'M7 3v6a5 5 0 0 0 10 0V3M9 3v3M15 3v3M12 14v7'
+        img: '/assets/solution-copper.webp', icon: 'M7 3v6a5 5 0 0 0 10 0V3M9 3v3M15 3v3M12 14v7'
       },
       {
         key: 'rooms', title: 'Communication Rooms', tagline: '',
         p1: 'Our experienced team designs, installs, and configures communication rooms of every size and complexity. We deliver organized, reliable infrastructure tailored to your operational needs, including:',
         p2: '', listLabel: 'Communication-room infrastructure:',
         bullets: ['Backup power systems', 'Cable management solutions', 'Open and enclosed equipment racks', 'Patch panels', 'Cross-connect cabling', 'Network equipment installation and setup'],
-        img: '/assets/solution-communication-rooms.jpg', icon: 'M3 5h18v6H3V5zM3 13h18v6H3v-6zM7 8h.01M7 16h.01M11 8h6M11 16h6'
+        img: '/assets/solution-communication-rooms.webp', icon: 'M3 5h18v6H3V5zM3 13h18v6H3v-6zM7 8h.01M7 16h.01M11 8h6M11 16h6'
       },
       {
         key: 'surveillance', title: 'Video Surveillance', tagline: 'Scalable Video Surveillance Solutions',
@@ -696,7 +697,7 @@ class Component extends DCLogic {
         p2: 'We work with leading surveillance technologies to provide clear, reliable coverage, centralized monitoring, remote access, and intelligent event notifications.',
         listLabel: 'Solutions can include:',
         bullets: ['Dome, bullet, and turret cameras', 'Indoor and outdoor surveillance', 'Infrared and low-light imaging', 'Thermal-imaging capabilities', 'Motion detection and event notifications', 'Remote viewing from computers and mobile devices', 'Video walls and centralized monitoring stations', 'System maintenance, upgrades, and expansion'],
-        img: '/assets/solution-video-surveillance.jpg', icon: 'M12 2l8 4v6c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10V6l8-4zM9.5 12l1.8 1.8 3.5-3.6'
+        img: '/assets/solution-video-surveillance.webp', icon: 'M12 2l8 4v6c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10V6l8-4zM9.5 12l1.8 1.8 3.5-3.6'
       },
       {
         key: 'access', title: 'Access Control', tagline: 'Secure and Manage Access with Confidence',
@@ -705,7 +706,7 @@ class Component extends DCLogic {
         listLabel: 'Access-control solutions can include:',
         bullets: ['Card and credential readers', 'RFID access systems', 'Keypads and PIN-based entry', 'Door strikes and locking hardware', 'Intercom and remote-entry systems', 'Biometric authentication', 'User and access-group management', 'Time- and date-stamped access records', 'Restricted access for server rooms, equipment rooms, and other secure areas'],
         p3: 'If your facility includes IT rooms, server rooms, vaults, or other areas containing sensitive information or valuable equipment, access control helps ensure that only authorized personnel can enter—protecting your assets from theft, tampering, and unauthorized use.',
-        img: '/assets/solution-access-control.jpg', icon: 'M6 11h12v10H6V11zM9 11V8a3 3 0 0 1 6 0v3M12 15v2'
+        img: '/assets/solution-access-control.webp', icon: 'M6 11h12v10H6V11zM9 11V8a3 3 0 0 1 6 0v3M12 15v2'
       }
     ].map(s => Object.assign({}, s, {
       short: s.tagline || s.p1,
@@ -727,13 +728,13 @@ class Component extends DCLogic {
       { name: 'Panduit', short: 'Structured Cabling', url: 'https://www.panduit.com/en.html', logo: '/assets/partner-panduit.png' },
       { name: 'Siemon', short: 'Structured Cabling', url: 'https://www.siemon.com/en/', logo: '/assets/partner-siemon.png' },
       { name: 'Corning', short: 'Optical Fibre', url: 'https://www.corning.com/optical-communications/worldwide/en/home.html', logo: '/assets/partner-corning.png' },
-      { name: 'Fluke Networks', short: 'Test & Certification', url: 'https://www.flukenetworks.com/', logo: '/assets/partner-fluke.png' },
+      { name: 'Fluke Networks', short: 'Test & Certification', url: 'https://www.flukenetworks.com/', logo: '/assets/partner-fluke.webp' },
       { name: 'AFL', short: 'Fibre Products', url: 'https://www.aflglobal.com/en', logo: '' },
       { name: 'Fujikura', short: 'Fusion Splicing', url: 'https://www.fujikura.com', logo: '/assets/partner-fujikura.png' },
       { name: 'dormakaba', short: 'Access Hardware', url: 'https://www.dormakaba.com/us-en/offering/products/electronic-access-data', logo: '/assets/partner-dormakaba.png' },
       { name: 'Kantech', short: 'Access Control', url: 'https://www.kantech.com/', logo: '/assets/partner-kantech.png' },
       { name: 'ARMS Technologies', short: 'Property Technology', url: 'https://armstechnologies.ai/', logo: '/assets/partner-arms.png' },
-      { name: 'AvantGuard Surveillance', short: 'Surveillance', url: 'https://www.aventguard.ca/', logo: '/assets/partner-aventguard.png' }
+      { name: 'AvantGuard Surveillance', short: 'Surveillance', url: 'https://www.aventguard.ca/', logo: '/assets/partner-aventguard.webp' }
     ].map(p => Object.assign({}, p, {
       hasLogo: !!p.logo,
       logoDisplay: p.logo ? 'flex' : 'none',

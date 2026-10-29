@@ -99,7 +99,7 @@
 
   // Core Web Vitals
   var s = document.createElement('script');
-  s.src = 'https://unpkg.com/web-vitals@4/dist/web-vitals.iife.js';
+  s.src = '/vendor/web-vitals.iife.js';
   s.async = true;
   s.onload = function () {
     if (!window.webVitals) return;
